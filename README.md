@@ -8,7 +8,7 @@ Our proxy server also decodes gzipped response, so that you don't have to worry 
 
 # Example request
 ```http request
-POST /music?url=/youtubei/v1/browse?key=AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8
+POST /music/youtubei/v1/browse?key=AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8
 Accept: */*
 Accept-Encoding: gzip, deflate
 Connection: keep-alive

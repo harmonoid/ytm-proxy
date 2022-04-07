@@ -22,7 +22,7 @@ func main() {
 	fmt.Println("Starting Harmonoid proxy...")
 
 	r := mux.NewRouter()
-	r.HandleFunc("/music", func(w http.ResponseWriter, r *http.Request) {
+	r.HandleFunc("/music/youtubei/v1/{endpoint}", func(w http.ResponseWriter, r *http.Request) {
 		client := req.C()
 		client.DisableAutoReadResponse()
 		request := client.R()
@@ -35,7 +35,7 @@ func main() {
 			}
 		}
 
-		url := fmt.Sprintf("https://music.youtube.com%s", r.URL.Query().Get("url"))
+		url := fmt.Sprintf("https://music.youtube.com/youtubei/v1/%s", mux.Vars(r)["endpoint"])
 
 		if r.Method == "GET" {
 			fmt.Printf("Serving GET request to %s using headers %s\n", url, request.Headers)
