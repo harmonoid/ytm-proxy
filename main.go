@@ -109,7 +109,12 @@ func main() {
 		w.Write(responseBody)
 	})
 
-	err := http.ListenAndServe("0.0.0.0:80", r)
+        port := "80"
+        if os.Getenv("PORT") != "" {
+                port = os.Getenv("PORT")
+        }
+
+	err := http.ListenAndServe(":" + port, r)
 	if err != nil {
 		fmt.Println(err.Error())
 		os.Exit(1)
