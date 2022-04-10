@@ -1,6 +1,6 @@
 /// This file is a part of Harmonoid (https://github.com/harmonoid/harmonoid).
 ///
-/// Copyright © 2020-2022, Hitesh Kumar Saini <saini123hitesh@gmail.com>.
+/// Copyright © 2022, Harmonoid <saini123hitesh@gmail.com>.
 /// All rights reserved.
 ///
 /// Use of this source code is governed by the End-User License Agreement for Harmonoid that can be found in the EULA.txt file in Harmonoid's repository (https://github.com/harmonoid/harmonoid).
@@ -23,7 +23,7 @@ func main() {
 	fmt.Println("Starting Harmonoid proxy...")
 
 	r := mux.NewRouter()
-	r.HandleFunc("/{type}/youtubei/v1/{endpoint}", func(w http.ResponseWriter, r *http.Request) {
+	r.HandleFunc("/{type}/youtubei/v1/{endpoint:.*}", func(w http.ResponseWriter, r *http.Request) {
 		client := req.C()
 		client.DisableAutoReadResponse()
 		request := client.R()
