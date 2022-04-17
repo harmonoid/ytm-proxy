@@ -40,9 +40,7 @@ func main() {
 			uri = fmt.Sprintf("https://music.youtube.com/youtubei/v1/%s", mux.Vars(r)["endpoint"])
 		} else if mux.Vars(r)["type"] == "youtube" {
 			uri = fmt.Sprintf("https://www.youtube.com/youtubei/v1/%s", mux.Vars(r)["endpoint"])
-		}
-
-		if uri == "" {
+		} else {
 			w.WriteHeader(http.StatusBadRequest)
 			w.Write([]byte("Invalid request"))
 			return
