@@ -1,10 +1,8 @@
-/// This file is a part of Harmonoid (https://github.com/harmonoid/harmonoid).
+/// This file is a part of HarmonoidProxy (https://github.com/harmonoid/HarmonoidProxy).
 ///
-/// Copyright © 2022, Harmonoid <saini123hitesh@gmail.com>.
+/// Copyright (c) 2022, Mitja Ševerkar <mytja@protonmail.com>.
 /// All rights reserved.
-///
-/// Use of this source code is governed by the End-User License Agreement for Harmonoid that can be found in the EULA.txt file in Harmonoid's repository (https://github.com/harmonoid/harmonoid).
-///
+/// Use of this source code is governed by MIT license that can be found in the LICENSE file.
 
 package main
 
