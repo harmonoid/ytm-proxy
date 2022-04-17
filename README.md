@@ -1,5 +1,7 @@
 # HarmonoidProxy
-Simple proxy for Harmonoid written in Go - proxies requests for YouTube Music (and YouTube soon)
+Simple proxy for Harmonoid written in Go - proxies requests for YouTube Music and YouTube.
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/harmonoid/HarmonoidProxy)
 
 # How does it work?
 It's quite simple, actually. It forwards request body from your request (only for POST) and all headers to https://music.youtube.com.
