@@ -1,12 +1,10 @@
-# HarmonoidProxy
-Simple proxy for Harmonoid written in Go - proxies requests for YouTube Music and YouTube.
+# ytm-proxy
+Simple proxy server to retrieve music data anonymously from YouTube & YouTube Music. Written in Go, is blazingly simple & fast.
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/harmonoid/HarmonoidProxy)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/harmonoid/ytm-proxy)
 
 # How does it work?
-It's quite simple, actually. It forwards request body from your request (only for POST) and all headers to https://music.youtube.com.
-
-Our proxy server also decodes gzipped response, so that you don't have to worry about anything.
+It's quite simple, actually. It forwards request body from your request (only for POST) and all headers to https://music.youtube.com or https://www.youtube.com, depending on what you select in the URL path (`/music/*` is for YouTube Music & `/youtube/*` is for YouTube). This proxy server also decompresses gzipped response, so that you don't have to worry about decoding/decompressing anything on client-side.
 
 # Example request
 ```http request

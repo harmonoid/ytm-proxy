@@ -15,7 +15,7 @@ RUN go mod download && \
 FROM alpine:latest
 
 WORKDIR /app
-COPY --from=builder /app/HarmonoidProxy ./HarmonoidProxy
+COPY --from=builder /app/ytm-proxy ./ytm-proxy
 
 EXPOSE 80
-CMD ./HarmonoidProxy
+CMD ./ytm-proxy

@@ -1,4 +1,4 @@
-/// This file is a part of HarmonoidProxy (https://github.com/harmonoid/HarmonoidProxy).
+/// This file is a part of ytm-proxy (https://github.com/harmonoid/ytm-proxy).
 ///
 /// Copyright (c) 2022, Mitja Ševerkar <mytja@protonmail.com>.
 /// All rights reserved.
@@ -18,7 +18,7 @@ import (
 )
 
 func main() {
-	fmt.Println("Starting Harmonoid proxy...")
+	fmt.Println("Starting ytm-proxy...")
 
 	r := mux.NewRouter()
 	r.HandleFunc("/{type}/youtubei/v1/{endpoint:.*}", func(w http.ResponseWriter, r *http.Request) {
