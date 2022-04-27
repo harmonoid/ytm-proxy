@@ -84,20 +84,30 @@ func main() {
 			fmt.Printf("Serving POST request to %s using headers %s and body %s\n", uri, request.Headers, string(b))
 
 			response, err = request.Post(uri)
+		} else {
+			fmt.Printf("We currently don't provide HTTP method %s, request headers %s, URI %s", r.Method, request.Headers, uri)
+			w.WriteHeader(http.StatusBadRequest)
+			w.Write([]byte("We currently don't provide this HTTP method"))
+			return
 		}
+		
 		if err != nil {
+			fmt.Println(err.Error())
+			w.WriteHeader(http.StatusInternalServerError)
 			w.Write([]byte(err.Error()))
 			return
 		}
 		res, err := gzip.NewReader(response.Body)
 		if err != nil {
 			fmt.Println(err.Error())
+			w.WriteHeader(http.StatusInternalServerError)
 			w.Write([]byte(err.Error()))
 			return
 		}
 		responseBody, err := io.ReadAll(res)
 		if err != nil {
 			fmt.Println(err.Error())
+			w.WriteHeader(http.StatusInternalServerError)
 			w.Write([]byte(err.Error()))
 			return
 		}
